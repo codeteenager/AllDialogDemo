@@ -21,4 +21,16 @@
         <item name="android:windowExitAnimation">@anim/dialog_from_bottom_anim_out</item>
     </style>
 
+    <!-- 顶部动画 -->
+    <style name="dialog_from_top_anim">
+        <item name="android:windowEnterAnimation">@anim/dialog_from_top_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_from_top_anim_out</item>
+    </style>
+
+    <!-- 缩放动画 -->
+    <style name="scale_anim">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_anim_out</item>
+    </style>
+
 </resources>

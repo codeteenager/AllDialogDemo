@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Created by codeteenager on 2017/11/22.
@@ -19,6 +22,30 @@ public class AlertDialog extends Dialog {
     public AlertDialog(@NonNull Context context, int themeResId) {
         super(context, themeResId);
         mAlert = new AlertController(this, getWindow());
+    }
+
+    /**
+     * 设置文本
+     *
+     * @param viewId
+     * @param text
+     */
+    public void setText(int viewId, CharSequence text) {
+        mAlert.setText(viewId, text);
+    }
+
+    public <T extends View> T getView(int viewId) {
+        return mAlert.getView(viewId);
+    }
+
+    /**
+     * 设置点击事件
+     *
+     * @param viewId
+     * @param listener
+     */
+    public void setOnClickListener(int viewId, View.OnClickListener listener) {
+        mAlert.setOnClickListener(viewId, listener);
     }
 
     public static class Builder {
@@ -119,6 +146,15 @@ public class AlertDialog extends Dialog {
             return this;
         }
 
+        //从顶部弹出
+        public Builder fromTop(boolean isAnimation) {
+            if (isAnimation) {
+                P.mAnimations = R.style.dialog_from_top_anim;
+            }
+            P.mGravity = Gravity.TOP;
+            return this;
+        }
+
         //设置宽和高
         public Builder setWidthAndHeight(int width, int height) {
             P.mWidth = width;
@@ -128,7 +164,7 @@ public class AlertDialog extends Dialog {
 
         //添加默认动画
         public Builder addDefaultAnimation() {
-            //P.mAnimations = R.style.
+            P.mAnimations = R.style.scale_anim;
             return this;
         }
 

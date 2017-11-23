@@ -1,5 +1,6 @@
 package com.codeteenager.alldialoglib;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.SparseArray;
@@ -16,10 +17,39 @@ import android.view.WindowManager;
 class AlertController {
     private AlertDialog mDialog;
     private Window mWindow;
+    private DialogViewHelper dialogViewHelper;
 
     public AlertController(AlertDialog dialog, Window window) {
         this.mDialog = dialog;
         this.mWindow = window;
+    }
+
+    /**
+     * 设置文本
+     *
+     * @param viewId
+     * @param text
+     */
+    public void setText(int viewId, CharSequence text) {
+        dialogViewHelper.setText(viewId, text);
+    }
+
+    public <T extends View> T getView(int viewId) {
+        return dialogViewHelper.getView(viewId);
+    }
+
+    /**
+     * 设置点击事件
+     *
+     * @param viewId
+     * @param listener
+     */
+    public void setOnClickListener(int viewId, View.OnClickListener listener) {
+        dialogViewHelper.setOnClickListener(viewId, listener);
+    }
+
+    public void setDialogViewHelper(DialogViewHelper dialogViewHelper) {
+        this.dialogViewHelper = dialogViewHelper;
     }
 
     public AlertDialog getDialog() {
@@ -86,16 +116,19 @@ class AlertController {
             }
             //给Dialog设置布局
             mAlert.getDialog().setContentView(dialogViewHelper.getContentView());
+            //设置Controller辅助类
+            mAlert.setDialogViewHelper(dialogViewHelper);
             //设置文本
             int textArraySize = mTextArray.size();
             for (int i = 0; i < textArraySize; i++) {
-                dialogViewHelper.setText(mTextArray.keyAt(i), mTextArray.valueAt(i));
+                mAlert.setText(mTextArray.keyAt(i), mTextArray.valueAt(i));
             }
             //设置点击事件
             int listenerArraySize = mListenerArray.size();
             for (int i = 0; i < listenerArraySize; i++) {
-                dialogViewHelper.setOnClickListener(mListenerArray.keyAt(i), mListenerArray.valueAt(i));
+                mAlert.setOnClickListener(mListenerArray.keyAt(i), mListenerArray.valueAt(i));
             }
+
             //配置默认效果
             Window window = mAlert.getWindow();
             //设置位置
