@@ -1,1 +1,1 @@
-include ':app', ':alldialoglib'
+include ':alldialoglib', ':test'

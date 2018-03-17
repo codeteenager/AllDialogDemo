@@ -1,4 +1,4 @@
-package com.codeteenager.alldialogdemo
+package cn.com.codeteenager.test
 
 import org.junit.Test
 

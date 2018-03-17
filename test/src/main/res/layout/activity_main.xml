@@ -5,12 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context="com.codeteenager.alldialogdemo.MainActivity">
+    tools:context="cn.com.codeteenager.test.MainActivity">
 
     <Button
-        android:id="@+id/btn_open"
+        android:id="@+id/btn_open_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="弹出" />
+        android:text="从顶部弹出" />
+    <Button
+        android:id="@+id/btn_open_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="从低部弹出" />
 
 </LinearLayout>

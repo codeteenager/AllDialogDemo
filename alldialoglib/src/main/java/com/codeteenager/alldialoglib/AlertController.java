@@ -1,6 +1,5 @@
 package com.codeteenager.alldialoglib;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.util.SparseArray;

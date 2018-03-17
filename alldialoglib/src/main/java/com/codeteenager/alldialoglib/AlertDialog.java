@@ -6,9 +6,6 @@ import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import java.lang.ref.WeakReference;
 
 /**
  * Created by codeteenager on 2017/11/22.

@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AllDialogDemo.iml" filepath="$PROJECT_DIR$/AllDialogDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/alldialoglib/alldialoglib.iml" filepath="$PROJECT_DIR$/alldialoglib/alldialoglib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>
